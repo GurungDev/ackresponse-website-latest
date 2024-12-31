@@ -1,24 +1,24 @@
 
 import "../style/background_images.css";
-import "../style/globals.css";
 import "../style/button_animation.css";
+import "../style/globals.css";
 
 import "../style/insight_animation.css";
 import "../style/text_animation.css";
 
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import "swiper/css/effect-creative";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 
 
-import type { Metadata } from "next";
 import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
-import React, { Suspense } from "react";
 import ScrollToTopButton from "@/components/goToTop";
-import { Nunito } from "next/font/google";
+import Navbar from "@/components/navbar";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import React, { Suspense } from "react";
 
 
 import Script from 'next/script';
@@ -33,9 +33,8 @@ export const metadata: Metadata = {
   description: "Company Description",
 };
 
-const geistSans = Nunito({
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
+
 
 // Define the RootLayout component
 export default function RootLayout({
@@ -62,7 +61,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${geistSans.className} antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         <Suspense fallback={<Loading/>}/>
         <Toaster position="top-center"/> 
         <Navbar />
