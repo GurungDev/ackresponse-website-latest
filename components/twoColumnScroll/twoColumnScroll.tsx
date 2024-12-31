@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
- 
+
 type OurProblemsSolutionsColumn = {
   update_Name_left_column: string;
   update_News_Right_column: string;
@@ -47,9 +47,11 @@ const StickyColumnsLayout: React.FC = () => {
   const handleProblemClick = (index: number) => {
     setSelectedProblemIndex(index);
     // You can use a ref to scroll to the selected content
-    const contentElement = document.getElementById(`update-${index}`);
-    if (contentElement) {
-      contentElement.scrollIntoView({ behavior: "smooth" });
+    if (typeof window !== "undefined") {
+      const contentElement = document.getElementById(`update-${index}`);
+      if (contentElement) {
+        contentElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 

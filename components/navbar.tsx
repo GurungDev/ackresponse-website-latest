@@ -29,34 +29,34 @@ export default function Navbar() {
     setIsOpen((prevState) => !prevState);
   };
 
-  // New code:
-
   useEffect(() => {
-    let lastScrollTop = 0;
-
-    const handleScroll = () => {
-      const currentScrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      // Determine if scrolling down or up and set visibility accordingly
-      if (currentScrollTop > lastScrollTop) {
-        setIsVisible(false); // Hide on scrolling down
-      } else {
-        setIsVisible(true); // Show on scrolling up
-      }
-
-      // Update the last scroll position
-      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-    };
-
-    // Attach the scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    if (typeof window !== "undefined") {
+      let lastScrollTop = 0;
+  
+      // Function to handle scroll events
+      const handleScroll = () => {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+        // Determine if scrolling down or up and set visibility accordingly
+        if (currentScrollTop > lastScrollTop) {
+          setIsVisible(false); // Hide on scrolling down
+        } else {
+          setIsVisible(true); // Show on scrolling up
+        }
+  
+        // Update the last scroll position
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+      };
+  
+      // Add the scroll event listener
+      window.addEventListener("scroll", handleScroll);
+  
+      // Cleanup function
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, []); // Only run once when the component mounts
 
   // Old code:
   // useEffect(() => {
@@ -189,7 +189,7 @@ export default function Navbar() {
                           className={
                             serviceHover
                               ? `h-[50vh]transition-all hover:text-[1.5rem] py-3 px-4 hover:text-green-400`
-                              : `h-[0vh] z-[-999] hidden` 
+                              : `h-[0vh] z-[-999] hidden`
                           }
 
                           // open={activeCollapsible === index}

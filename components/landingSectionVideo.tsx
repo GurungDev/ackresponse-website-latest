@@ -10,15 +10,18 @@ type props = {
 const Landing_Section = ({ title, description, page }: props) => {
   const [isPlayed, setIsPlayed] = useState(true);
   const toogleButton = () => {
-    const video = document.getElementById("video-bg") as HTMLVideoElement;
-    if (video) {
-      if (!isPlayed) {
-        video.play();
-      } else if (isPlayed) {
-        video.pause();
+    if (typeof window !== "undefined") {
+      const video = document.getElementById("video-bg") as HTMLVideoElement;
+      if (video) {
+        if (!isPlayed) {
+          video.play();
+        } else if (isPlayed) {
+          video.pause();
+        }
+        setIsPlayed(!isPlayed);
       }
-      setIsPlayed(!isPlayed);
     }
+   
   };
 
   return (

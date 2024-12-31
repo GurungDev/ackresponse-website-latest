@@ -12,24 +12,26 @@ export default function AboutServiceNavbar() {
   const [currentSection, setCurrentSection] = useState<string>();
 
   const trackCurrentSection = () => {
-    const sections = document.querySelectorAll("section");
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
-    };
+    if (typeof window !== "undefined") {
+      const sections = document.querySelectorAll("section");
+      const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setCurrentSection(entry.target.id);
-        }
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCurrentSection(entry.target.id);
+          }
+        });
+      }, options);
+
+      sections.forEach((section) => {
+        observer.observe(section);
       });
-    }, options);
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    }
   };
   const handleLinkClick = (event: React.MouseEvent, targetId: string) => {
     event.preventDefault();
