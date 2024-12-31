@@ -1,6 +1,5 @@
 
 import ConnectCompany from "@/components/company-contact";
-// import News_slider from "@/components/hompage/news slider";
 import Swipper from "@/components/insight/swipper";
 import Slider_landing_page from "@/components/landinghomepageslider";
 import Link from "next/link";
@@ -17,10 +16,9 @@ import Portfolio from "@/components/hompage/purposeComponent";
 import OurMoto from "@/components/OurMotto";
 import HomepageInsight from "@/components/hompage/HomepageInsight";
 import ServiceInsightsSection from "@/components/service/service-insights-section";
-// import { DialogBox } from "@/components/hompage/DialogBox";
 
 
-  export default function Home() {
+export default function Home() {
 
     const service_list = [
 

@@ -18,7 +18,8 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import React, { Suspense } from "react";
 import ScrollToTopButton from "@/components/goToTop";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
+
 
 import Script from 'next/script';
 
@@ -32,8 +33,9 @@ export const metadata: Metadata = {
   description: "Company Description",
 };
 
-// Create the Inter font with "latin" subset
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = Nunito({
+  subsets: ["latin"],
+});
 
 // Define the RootLayout component
 export default function RootLayout({
@@ -43,16 +45,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" as="style"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" as="style" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" as="style" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" as="style"/>
-        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" as="style"/>
-        <link rel="manifest" href="/site.webmanifest" />
+        <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            {/* Google Analytics Script */}
-            <Script
+        {/* Google Analytics Scripts */}
+        <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-JNBK97877Z`}
           strategy="afterInteractive"
@@ -64,9 +60,9 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-JNBK97877Z');
           `}
-        </Script>   
+        </Script>
       </head>
-      <body className={inter.className}>
+      <body className={`${geistSans.className} antialiased`}>
         <Suspense fallback={<Loading/>}/>
         <Toaster position="top-center"/> 
         <Navbar />
