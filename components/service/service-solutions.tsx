@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import { Autoplay, HashNavigation, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { useEffect, useRef, useState } from "react";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
-import { useEffect,useRef, useState } from "react";
 import { Swiper as SwiperCore } from "swiper";
 
 type SwiperSlide = {

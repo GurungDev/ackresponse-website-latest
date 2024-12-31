@@ -57,7 +57,6 @@ export default function Input({
   className,
   disabled,
   register,
-  rows,
   error,
   icon,
   value,

@@ -3,8 +3,8 @@ import React from "react";
 
 type Props = {
   image: string;
-  title: String;
-  description: String;
+  title: string;
+  description: string;
 };
 
 const InsightAdvertise = ({ image, title, description }: Props) => {

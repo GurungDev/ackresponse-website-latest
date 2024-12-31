@@ -1,24 +1,23 @@
 
 "use client";
 
-import Input from "@/components/ui/input";
-import { Listbox as HUIListbox, Transition } from "@headlessui/react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { countries } from "@/data/countries";
-import "react-international-phone/style.css";
-import toast, { Toaster } from 'react-hot-toast';
-import { Switch } from "@headlessui/react";
-import { Fragment, useRef, useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
+import contactUs from '@/animation/contactUs.json';
 import ConnectCompany from "@/components/company-contact";
-import {motion} from 'framer-motion';
-import contactUs from '@/animation/contactUs.json'
-import Lottie from "react-lottie-player";
 import Swipper from "@/components/insight/swipper";
-import Link from "next/link"; 
 import ServiceInsightsSection from "@/components/service/service-insights-section";
+import Input from "@/components/ui/input";
+import { countries } from "@/data/countries";
+import { Listbox as HUIListbox, Switch, Transition } from "@headlessui/react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from 'framer-motion';
+import Link from "next/link";
+import { Fragment, useState } from "react";
+import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
+import { IoIosArrowDown } from "react-icons/io";
+import "react-international-phone/style.css";
+import Lottie from "react-lottie-player";
+import { z } from "zod";
 
 const schema = z.object({
   first_name: z.string().nonempty({ message: "First name is required" }),

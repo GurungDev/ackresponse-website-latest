@@ -1,33 +1,17 @@
 "use client"
 
-import "../../../style/globals.css";
 import "../../../style/background_images.css";
+import "../../../style/globals.css";
 
-import ServiceBenefits from "@/components/service/service-benefits";
 
-import ServiceSolutions from "@/components/service/service-solutions";
-import News_slider from "@/components/hompage/news slider";
-import Slider_landing_page from "@/components/landingServicepageSlider";
-import ServiceApproach from "@/components/service/service-approach";
-import ServiceInsightsSection from "@/components/service/service-insights-section";
-import ConnectCloud from "@/components/connect-cloud";
 import ConnectCompany from "@/components/company-contact";
+import ServiceInsightsSection from "@/components/service/service-insights-section";
 
 import Link from "next/link";
-import Image from "next/image";
-import { useAnimation,motion, useScroll, useTransform } from "framer-motion";
-import { useInView } from 'react-intersection-observer';
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
-import animation_cloud from '@/animation/Cloud.json';
-import animation_cloud2 from '@/animation/cloud2.json'
-import animation_cloud3 from '@/animation/cloud3.json'
-import Lottie from 'react-lottie-player';
-import { FaCloud } from "react-icons/fa";
-import { IoCloudOutline } from "react-icons/io5";
-import CloudTypes from "@/components/service/cloud/CloudTypes";
-import { BsArrowRightShort } from "react-icons/bs";
 import Swipper from "@/components/insight/swipper";
+import { BsArrowRightShort } from "react-icons/bs";
 
 export default function Consultancy() {
 

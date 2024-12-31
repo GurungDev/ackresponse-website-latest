@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
-import { Autoplay, HashNavigation, Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { SiDatadotai } from "react-icons/si";
+import { useEffect, useRef, useState } from "react";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
-import { useEffect,useRef,useState } from "react";
 import { Swiper as SwiperCore } from "swiper";
+import { Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 type SwiperSlide = {
   image: string;

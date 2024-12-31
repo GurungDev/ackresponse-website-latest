@@ -8,15 +8,15 @@ import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 type SwiperSlide = {
   id: number;
 
-  title: String;
+  title: string;
 };
 
 type Props = {
-  button: String;
-  background: String;
-  buttonDiv: String;
-  backgroundColor: String;
-  side_button: String;
+  button: string;
+  background: string;
+  buttonDiv: string;
+  backgroundColor: string;
+  side_button: string;
   slides: SwiperSlide[];
 };
 

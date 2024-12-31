@@ -5,7 +5,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 import Contact_Us_Section from "./insight/contact_us";
 
 export default function SubForm() {
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);

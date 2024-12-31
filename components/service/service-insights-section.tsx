@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 
 type Props = {
-  title: String;
+  title: string;
 };
 export default function ServiceInsightsSection({ title }: Props) {
   const data = [

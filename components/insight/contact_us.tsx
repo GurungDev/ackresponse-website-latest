@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { z } from "zod";
+import Input from "@/components/input";
+// import emailjs from "@emailjs/browser";
+import { Switch } from "@headlessui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
-import emailjs from "@emailjs/browser";
-import Input from "@/components/input";
-import { Switch } from "@headlessui/react";
-import PostData from "@/controller/sub";
 import { toast } from "react-hot-toast";
+import { z } from "zod";
 
 const schema = z.object({
   name: z.string().nonempty({ message: "Name is required" }),
@@ -46,15 +45,15 @@ const Contact_Us_Section = () => {
         company: data.company,
         job: data.position,
       };
-      const response = await emailjs.send(
-        process.env.EMAILSERVICE || " ",
-        process.env.TEMPLATEKEY1 || " ",
-        formTemplate,
-        process.env.NEXT_PUBLIC_EMAILJS_KEY
-      );
-      if (!response) {
-        throw new Error("Oops something went wrong. Try again !!");
-      }
+      // const response = await emailjs.send(
+      //   process.env.EMAILSERVICE || " ",
+      //   process.env.TEMPLATEKEY1 || " ",
+      //   formTemplate,
+      //   process.env.NEXT_PUBLIC_EMAILJS_KEY
+      // );
+      // if (!response) {
+      //   throw new Error("Oops something went wrong. Try again !!");
+      // }
       toast.success("success");
     } catch (error) {
       const errorMessage = (error as Error).message;

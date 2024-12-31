@@ -4,8 +4,8 @@ import Image from "next/image";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 
 type Props = {
-  title: String;
-  benefits: String[];
+  title: string;
+  benefits: string[];
   classNames?: string
 };
 
