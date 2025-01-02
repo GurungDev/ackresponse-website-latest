@@ -15,7 +15,7 @@ import ConnectCompany from "@/components/company-contact";
 
 // import Link from "next/link";
 // import Image from "next/image";
-import { useAnimation,motion, useScroll, useTransform } from "framer-motion";
+import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 // import { useInView } from 'react-intersection-observer';
 import { useEffect, useRef, useState } from "react";
 
@@ -27,22 +27,10 @@ import Lottie from 'react-lottie-player';
 // import { IoCloudOutline } from "react-icons/io5";
 import CloudTypes from "@/components/service/cloud/CloudTypes";
 
+
 export default function Cloud() {
 
-  const controls = useAnimation();
-
  
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["end end", "start start"]
-  });
-
-  // Adjust these values for desired smoothness and vertical movement
-  const yTransform = useTransform(scrollYProgress, [0, 1], [500, -10]);
-
-
   return (
     <div className="">
       {/* <Slider_landing_page
@@ -288,7 +276,7 @@ export default function Cloud() {
       </div>
 
 
-      <div ref={ref} className="w-full h-full flex justify-between items-center overflow-hidden cloud_page_gradient py-7 lg:py-16 lg:px-12">
+      <div   className="w-full h-full flex justify-between items-center overflow-hidden cloud_page_gradient py-7 lg:py-16 lg:px-12">
         <div className="flex w-full h-full justify-around items-center">
 
           <div className="
