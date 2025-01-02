@@ -85,28 +85,7 @@ const Slider_landing_page = () => {
           prevEl: `#prev_slide`,
           nextEl: `#next_slide`,
         }}
-        pagination={{
-          clickable: true,
-          renderBullet: (index, className) => {
-            // Responsive bullet structure based on screen size
-            if (window.innerWidth <= 700) {
-              // Small screen pagination bullet
-
-              return `
-            
-             <div class="${className} flex justify-center items-center   bg-white text-white">
-            </div>
-                  
-              `;
-            } else {
-              // Default pagination bullet for larger screens
-              return `
-                <div class="${className}">
-                  ${sliderContent[index]?.slider_title}
-                </div>`;
-            }
-          },
-        }}
+     
         
         
         modules={[Autoplay, EffectFade, Pagination, Navigation]}

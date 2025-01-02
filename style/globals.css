@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.retail_insights_card{
-  animation: fadeInLeft 0.5s;
-}
-
-
-.scrollbar-hide::-webkit-scrollbar {
-  width: 0.4rem;
-}
-
-.scrollbar-hide::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
  
  
 /* Add these styles to your CSS file */

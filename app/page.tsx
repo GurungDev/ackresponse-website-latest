@@ -1,134 +1,100 @@
 
 import ConnectCompany from "@/components/company-contact";
-import dynamic from "next/dynamic";
-const Swipper = dynamic(() => import("@/components/insight/swipper"), {ssr: false});
-
- import Portfolio from "@/components/hompage/purposeComponent";
-import OurMoto from "@/components/OurMotto";
+import Swipper from "@/components/insight/swipper";
+import Slider_landing_page from "@/components/landinghomepageslider";
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs";
-import { FaCloud, FaLaptopCode } from "react-icons/fa";
-import { FaPeopleGroup } from "react-icons/fa6";
 import {
   MdOutlineAppSettingsAlt,
-  MdOutlineDevices,
 } from "react-icons/md";
 import { SiJfrogpipelines } from "react-icons/si";
- const Slider_landing_page = dynamic(() => import("@/components/landinghomepageslider"), {ssr: false});
+import { FaLaptopCode } from "react-icons/fa";
+import { FaCloud } from "react-icons/fa";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { MdOutlineDevices } from "react-icons/md";
+import Portfolio from "@/components/hompage/purposeComponent";
+import OurMoto from "@/components/OurMotto";
+import HomepageInsight from "@/components/hompage/HomepageInsight";
+import ServiceInsightsSection from "@/components/service/service-insights-section";
 
-const HomepageInsight = dynamic(() => import("@/components/hompage/HomepageInsight"), {ssr: false});
-const ServiceInsightsSection = dynamic(() => import("@/components/service/service-insights-section"), {ssr: false});
-
- 
 
 export default function Home() {
 
-    const service_list = [
 
-      {
-        id: "Cloud",
-        icon: () => {
-          return (
-            <FaCloud className="group-hover:transform group-hover:translate-y-[-6px] group-hover:text-sky-500 text-4xl duration-200" />
+  const service_list = [
+    {
+      id: "Cloud",
+      icon: () => {
+        return (
+          <FaCloud className="group-hover:transform group-hover:translate-y-[-6px] group-hover:text-sky-500 text-4xl duration-200" />
+        );
+      },
+      title: "Cloud",
+      link: "/service/cloud",
+    },
+    {
+      id: "DevOps & Automations",
+      icon: () => {
+        return (
+          <SiJfrogpipelines className="group-hover:-translate-y-[6px] group-hover:text-btn_color text-4xl duration-200" />
+        );
+      },
+      title: "DevOps/Automations",
+      // subTitile: "(CI/CD, GitOps, Scripting) - Test2",
+      link: "/service/automation",
+    },
+    {
+      id: "Web",
+      icon: () => {
+        return (
+          <FaLaptopCode className="group-hover:-translate-y-[6px] group-hover:text-pink-600 text-4xl duration-200" />
+        );
+      },
+      title: "Web",
+      link: "/service/webApp",
+    },
+    {
+      id: "Mobile",
+      icon: () => {
+        return (
+          <MdOutlineAppSettingsAlt className="group-hover:-translate-y-[6px] group-hover:text-yellow-400 text-4xl duration-200" />
+        );
+      },
+      title: "Mobile",
+      link: "/service/mobileApp",
+    },
 
-          );
-        },
-        title: "Cloud",
-        link: "/service/cloud",
+    {
+      id: "Software",
+      icon: () => {
+        return (
+          <MdOutlineDevices className="group-hover:-translate-y-[6px] group-hover:text-blue-500  text-4xl duration-200" />
+        );
       },
-      // {
-      //   id: "Hybrid Cloud",
-      //   icon: () => {
-      //     return (
-      //       <MdOutlineSettingsApplications className="group-hover:-translate-y-[6px] group-hover:text-btn_color text-[1.4rem] duration-200" />
-      //     );
-      //   },
-      //   title: "Hybrid Cloud",
-      //   link: "/service/hybridCloud",
-      // },
-      {
-        id: "DevOps & Automations",
-        icon: () => {
-          return (
-            <SiJfrogpipelines  className="group-hover:-translate-y-[6px] group-hover:text-btn_color text-4xl duration-200" />
-          );
-        },
-        title: "DevOps/Automations",
-        // subTitile: "(CI/CD, GitOps, Scripting) - Test2",
-        link: "/service/automation",
+      title: "Software",
+      link: "/service/softwareDevelopment ",
+    },
+    {
+      id: "Consultancy",
+      icon: () => {
+        return (
+          <FaPeopleGroup className="group-hover:-translate-y-[6px] group-hover:text-purple-500  text-4xl duration-200" />
+        );
       },
-      {
-        id: "Web",
-        icon: () => {
-          return (
-            <FaLaptopCode className="group-hover:-translate-y-[6px] group-hover:text-pink-600 text-4xl duration-200" />
-          );
-        },
-        title: "Web",
-        link: "/service/webApp",
-      },
-      {
-        id: "Mobile",
-        icon: () => {
-          return (
-            <MdOutlineAppSettingsAlt className="group-hover:-translate-y-[6px] group-hover:text-yellow-400 text-4xl duration-200" />
-          );
-        },
-        title: "Mobile",
-        link: "/service/mobileApp",
-      },
-      // {
-      //   id: "UIUX",
-      //   icon: () => {
-      //     return (
-      //       <MdDraw className="group-hover:-translate-y-[6px] group-hover:text-neutral-700 text-[1.4rem] duration-200" />
-      //     );
-      //   },
-      //   title: "UX / UI",
-      //   link: "/service/uiux",
-      // },
-      // {
-      //   id: "DevOps",
-      //   icon: () => {
-      //     return (
-      //       <MdOutlineDesignServices className="group-hover:-translate-y-[6px] group-hover:text-btn_color  text-[1.4rem] duration-200" />
-      //     );
-      //   },
-      //   title: "DevOps",
-      //   link: "/service/automation",
-      // },
-      {
-        id: "Software",
-        icon: () => {
-          return (
-            <MdOutlineDevices className="group-hover:-translate-y-[6px] group-hover:text-blue-500  text-4xl duration-200" />
-          );
-        },
-        title: "Software",
-        link: "/service/softwareDevelopment ",
-      },
-      {
-        id: "Consultancy",
-        icon: () => {
-          return (
-            <FaPeopleGroup className="group-hover:-translate-y-[6px] group-hover:text-purple-500  text-4xl duration-200" />
-          );
-        },
-        title: "Consultancy",
-        link: "/service/consultancy",
-      },
-      // {
-      //   id: "it_outsourcing",
-      //   icon: () => {
-      //     return (
-      //       <IoEarth className="group-hover:-translate-y-[6px] group-hover:text-green-700  text-[1.4rem] duration-200" />
-      //     );
-      //   },
-      //   title: "IT Outsourcing",
-      //   link: "/service/consultancy",
-      // },
-    ];
-
+      title: "Consultancy",
+      link: "/service/consultancy",
+    },
+    // {
+    //   id: "it_outsourcing",
+    //   icon: () => {
+    //     return (
+    //       <IoEarth className="group-hover:-translate-y-[6px] group-hover:text-green-700  text-[1.4rem] duration-200" />
+    //     );
+    //   },
+    //   title: "IT Outsourcing",
+    //   link: "/service/consultancy",
+    // },
+  ];
     return (
       <div className="min-h-[100vh] relative bg-black ">
           {/* <DialogBox/> */}
