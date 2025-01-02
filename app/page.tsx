@@ -1,22 +1,25 @@
 
 import ConnectCompany from "@/components/company-contact";
-import Swipper from "@/components/insight/swipper";
-import Slider_landing_page from "@/components/landinghomepageslider";
+import dynamic from "next/dynamic";
+const Swipper = dynamic(() => import("@/components/insight/swipper"), {ssr: false});
+
+ import Portfolio from "@/components/hompage/purposeComponent";
+import OurMoto from "@/components/OurMotto";
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs";
+import { FaCloud, FaLaptopCode } from "react-icons/fa";
+import { FaPeopleGroup } from "react-icons/fa6";
 import {
   MdOutlineAppSettingsAlt,
+  MdOutlineDevices,
 } from "react-icons/md";
 import { SiJfrogpipelines } from "react-icons/si";
-import { FaLaptopCode } from "react-icons/fa";
-import { FaCloud } from "react-icons/fa";
-import { FaPeopleGroup } from "react-icons/fa6";
-import { MdOutlineDevices } from "react-icons/md";
-import Portfolio from "@/components/hompage/purposeComponent";
-import OurMoto from "@/components/OurMotto";
-import HomepageInsight from "@/components/hompage/HomepageInsight";
-import ServiceInsightsSection from "@/components/service/service-insights-section";
+ const Slider_landing_page = dynamic(() => import("@/components/landinghomepageslider"), {ssr: false});
 
+const HomepageInsight = dynamic(() => import("@/components/hompage/HomepageInsight"), {ssr: false});
+const ServiceInsightsSection = dynamic(() => import("@/components/service/service-insights-section"), {ssr: false});
+
+ 
 
 export default function Home() {
 

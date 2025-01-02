@@ -1,11 +1,11 @@
 
-import DevOpsToUs from "@/components/service/devOps/DevOpsToUs";
-import "../../../style/background_images.css";
-import ServiceBenefits from "@/components/service/service-benefits";
-import ServiceSolutions from "@/components/service/service-solutions-small";
-import ServiceInsightsSection from "@/components/service/service-insights-section";
 import ConnectCompany from "@/components/company-contact";
 import AutomationTechStack from "@/components/service/devOps/AutomationTechStack";
+import DevOpsToUs from "@/components/service/devOps/DevOpsToUs";
+import ServiceBenefits from "@/components/service/service-benefits";
+import ServiceInsightsSection from "@/components/service/service-insights-section";
+import ServiceSolutions from "@/components/service/service-solutions-small";
+import "../../../style/background_images.css";
 
 
 export default function Cicd() {

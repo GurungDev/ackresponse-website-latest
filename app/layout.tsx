@@ -1,32 +1,25 @@
 
+import React, { Suspense } from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Script from 'next/script';
+import { Toaster } from "react-hot-toast";
+import Loading from "./loading";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("@/components/footer"), {ssr: false});
+const ScrollToTopButton = dynamic(() => import("@/components/goToTop"), {ssr: false});
+const Navbar = dynamic(() => import("@/components/navbar"), {ssr: false});
+ 
 import "../style/background_images.css";
 import "../style/button_animation.css";
 import "../style/globals.css";
-
 import "../style/insight_animation.css";
 import "../style/text_animation.css";
-
 import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-
-
-import Footer from "@/components/footer";
-import ScrollToTopButton from "@/components/goToTop";
-import Navbar from "@/components/navbar";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import React, { Suspense } from "react";
-
-
-import Script from 'next/script';
-
-// import "swiper/css/effect-fade" --> this css module seems to have a bug
-
-import { Toaster } from "react-hot-toast";
-import Loading from "./loading";
 // Define your metadata
 export const metadata: Metadata = {
   title: "ackresponse",
