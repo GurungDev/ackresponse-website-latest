@@ -15,9 +15,8 @@ import ConnectCompany from "@/components/company-contact";
 
 // import Link from "next/link";
 // import Image from "next/image";
-import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 // import { useInView } from 'react-intersection-observer';
-import { useEffect, useRef, useState } from "react";
 
 import animation_cloud from '@/animation/Cloud.json';
 // import animation_cloud2 from '@/animation/cloud2.json'

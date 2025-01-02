@@ -1,9 +1,6 @@
-import Image from 'next/image'
-import React from 'react'
+"use client"
 import { FaServer } from "react-icons/fa";
-import { SiKubernetes } from "react-icons/si";
-import { SiOpenstack } from "react-icons/si";
-import { SiGooglecloud } from "react-icons/si";
+import { SiGooglecloud, SiKubernetes, SiOpenstack } from "react-icons/si";
 
 
 const CloudTypes = () => {

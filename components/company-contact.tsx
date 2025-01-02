@@ -1,7 +1,6 @@
-import React from "react";
-import { BsArrowRightShort } from "react-icons/bs";
-import SubForm from "./subscribe-form";
+"use client"
 import Link from "next/link";
+import { BsArrowRightShort } from "react-icons/bs";
 
 const ConnectCompany = () => {
   return (
